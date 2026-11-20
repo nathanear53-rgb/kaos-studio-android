@@ -834,7 +834,7 @@ class MainActivity : Activity() {
                     if (event.pointerCount >= 2 && art.bitmap != null) {
                         val p0 = toDesign(event, 0)
                         val p1 = toDesign(event, 1)
-                        startDist = max(1f, Math.hypot(p1.first - p0.first, p1.second - p0.second).toFloat())
+                        startDist = max(1f, Math.hypot((p1.first - p0.first).toDouble(), (p1.second - p0.second).toDouble()).toFloat())
                         startAngle = Math.atan2(
                             (p1.second - p0.second).toDouble(),
                             (p1.first - p0.first).toDouble()
@@ -849,7 +849,7 @@ class MainActivity : Activity() {
                     if (pinchActive && event.pointerCount >= 2 && art.bitmap != null) {
                         val p0 = toDesign(event, 0)
                         val p1 = toDesign(event, 1)
-                        val dist = max(1f, Math.hypot(p1.first - p0.first, p1.second - p0.second).toFloat())
+                        val dist = max(1f, Math.hypot((p1.first - p0.first).toDouble(), (p1.second - p0.second).toDouble()).toFloat())
                         val angle = Math.atan2(
                             (p1.second - p0.second).toDouble(),
                             (p1.first - p0.first).toDouble()
